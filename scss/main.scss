@@ -1,0 +1,149 @@
+@use "sass:color";
+ 
+$master_bg: #222222; // Главный цвет фона
+$slave_bg: #333333; // Дополнительный цвет фона
+$master_fg: #cccccc; // Главный цвет текста
+$link_fg: #ccddff; // Главный цвет ссылки
+$talk_odd_bg: #F0F080; // Цвет нечётной реплики в обсуждении, которая отделена двоето
+$talk_even_bg: #F8FCF0; // Цвет чётной реплики в обсуждении, которая отделена двоеточие
+$message_bg: #cccccc;
+$warning_bg: adjust-color($master_bg, $red: 25%, $green: 15%); // Главный цвет фона предупреждения
+$error_bg: #ddcccc;
+$success_bg: #ccddcc;
+
+.messagebox, .errorbox, .warningbox, .successbox,
+.wikiEditor-ui-toolbar,
+h1, h2, h3, h4, h5, h6,
+.mw-parser-output div.main-top-left,
+.mw-parser-output div.main-top,
+.mw-parser-output div.main-box
+ {
+	background-color: inherit;
+	color: inherit; 
+  background-image: none;
+}
+
+body,
+.mw-body,
+.parsoid-body,
+table.fmbox-system,
+.fmbox-system,
+.wikiEditor-ui-toolbar,
+.editor.ace-tm,
+.editor,
+.editOptions,
+.codeEditor-status,
+.mw-body-content,
+.mw-content-ltr,
+.mw-parser-output,
+.toc,
+.mw-warning,
+.infobox,
+.toccolours,
+div.thumbinner,
+div.flaggedrevs_basic,
+.main-top {   
+	background-color: $master_bg;
+  
+  .ace_gutter,
+  .ace_gutter-cell {
+    background-color: $master_bg;  
+  }
+}
+
+body,
+.mw-body,
+.parsoid-body,  
+.mw-editform,
+h1, h2, h3, h4, h5, h6, 
+.wikiEditor-ui-toolbar, 
+.editor.ace-tm,
+.editOptions,
+.codeEditor-status,
+.mw-body-content,   
+.mw-content-ltr,
+.main-top,
+.toc,
+.mw-warning,
+.infobox,
+.toccolours,
+div.thumbinner,
+div.flaggedrevs_basic,
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+  color: $master_fg;  
+
+  .ace_gutter,
+  .ace_gutter-cell {
+    color: $master_fg;
+  }  
+}
+
+.oo-ui-textInputWidget .oo-ui-inputWidget-input,
+input,
+.mw-ui-button.mw-ui-quiet,
+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,
+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,
+.mw-ui-button {
+  background-color: $slave_bg;
+  color: $master_fg;    
+}
+
+.mw-parser-output {
+  div.main-top,
+  div.main-top-left,
+  div.main-box {
+    background-color: $master_bg; 
+    color: $master_fg;
+  }
+}
+ 
+.warningbox {     
+  background-color: $warning_bg;
+  border-color: darken($warning_bg, 10%);
+}
+
+.portal .body li a,
+a.mw-charinsert-item,
+a {
+  color: $link_fg;
+   
+  &:visited {
+    color: darken($link_fg, 10%);
+  }
+}
+
+.mw-highlight,
+div.mw-highlight,
+pre,
+.mw-code{
+	background-color: lighten($master_bg, 3%);
+}
+
+/* Выделение реплик, обозначенных «:», разными цветами */
+.ns-talk dl, .ns-4 dl {
+ border-top:solid 1px $talk_odd_bg;
+ border-left:solid 1px $talk_odd_bg;
+ padding:.5em 0 0 .5em;
+ margin:0 0 0 1em;
+}
+.ns-talk dl, .ns-4 dl,
+.ns-talk dl dl dl, .ns-4 dl dl dl,
+.ns-talk dl dl dl dl dl, .ns-4 dl dl dl dl dl,
+.ns-talk dl dl dl dl dl dl dl, .ns-4 dl dl dl dl dl dl dl,
+.ns-talk dl dl dl dl dl dl dl dl dl,
+.ns-4 dl dl dl dl dl dl dl dl dl
+{background:$talk_even_bg}
+.ns-talk dl dl, .ns-4 dl dl,
+.ns-talk dl dl dl dl, .ns-4 dl dl dl dl,
+.ns-talk dl dl dl dl dl dl, .ns-4 dl dl dl dl dl dl,
+.ns-talk dl dl dl dl dl dl dl dl,
+.ns-4 dl dl dl dl dl dl dl dl
+{background:$talk_even_bg}
+
+/* Нумерованный список вклада и журналов */
+.mw-special-Contributions #content ul,
+.mw-special-Log #content ul
+{
+ list-style-type: decimal !important; 
+ list-style-image:none !important;
+}

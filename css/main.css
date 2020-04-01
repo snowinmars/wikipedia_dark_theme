@@ -1,0 +1,201 @@
+@charset "UTF-8";
+@use "sass:color";
+.messagebox, .errorbox, .warningbox, .successbox,
+.wikiEditor-ui-toolbar,
+h1, h2, h3, h4, h5, h6,
+.mw-parser-output div.main-top-left,
+.mw-parser-output div.main-top,
+.mw-parser-output div.main-box {
+  background-color: inherit;
+  color: inherit;
+  background-image: none; }
+
+body,
+.mw-body,
+.parsoid-body,
+table.fmbox-system,
+.fmbox-system,
+.wikiEditor-ui-toolbar,
+.editor.ace-tm,
+.editor,
+.editOptions,
+.codeEditor-status,
+.mw-body-content,
+.mw-content-ltr,
+.mw-parser-output,
+.toc,
+.mw-warning,
+.infobox,
+.toccolours,
+div.thumbinner,
+div.flaggedrevs_basic,
+.main-top {
+  background-color: #222222; }
+  body .ace_gutter,
+  body .ace_gutter-cell,
+  .mw-body .ace_gutter,
+  .mw-body .ace_gutter-cell,
+  .parsoid-body .ace_gutter,
+  .parsoid-body .ace_gutter-cell,
+  table.fmbox-system .ace_gutter,
+  table.fmbox-system .ace_gutter-cell,
+  .fmbox-system .ace_gutter,
+  .fmbox-system .ace_gutter-cell,
+  .wikiEditor-ui-toolbar .ace_gutter,
+  .wikiEditor-ui-toolbar .ace_gutter-cell,
+  .editor.ace-tm .ace_gutter,
+  .editor.ace-tm .ace_gutter-cell,
+  .editor .ace_gutter,
+  .editor .ace_gutter-cell,
+  .editOptions .ace_gutter,
+  .editOptions .ace_gutter-cell,
+  .codeEditor-status .ace_gutter,
+  .codeEditor-status .ace_gutter-cell,
+  .mw-body-content .ace_gutter,
+  .mw-body-content .ace_gutter-cell,
+  .mw-content-ltr .ace_gutter,
+  .mw-content-ltr .ace_gutter-cell,
+  .mw-parser-output .ace_gutter,
+  .mw-parser-output .ace_gutter-cell,
+  .toc .ace_gutter,
+  .toc .ace_gutter-cell,
+  .mw-warning .ace_gutter,
+  .mw-warning .ace_gutter-cell,
+  .infobox .ace_gutter,
+  .infobox .ace_gutter-cell,
+  .toccolours .ace_gutter,
+  .toccolours .ace_gutter-cell,
+  div.thumbinner .ace_gutter,
+  div.thumbinner .ace_gutter-cell,
+  div.flaggedrevs_basic .ace_gutter,
+  div.flaggedrevs_basic .ace_gutter-cell,
+  .main-top .ace_gutter,
+  .main-top .ace_gutter-cell {
+    background-color: #222222; }
+
+body,
+.mw-body,
+.parsoid-body,
+.mw-editform,
+h1, h2, h3, h4, h5, h6,
+.wikiEditor-ui-toolbar,
+.editor.ace-tm,
+.editOptions,
+.codeEditor-status,
+.mw-body-content,
+.mw-content-ltr,
+.main-top,
+.toc,
+.mw-warning,
+.infobox,
+.toccolours,
+div.thumbinner,
+div.flaggedrevs_basic,
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+  color: #cccccc; }
+  body .ace_gutter,
+  body .ace_gutter-cell,
+  .mw-body .ace_gutter,
+  .mw-body .ace_gutter-cell,
+  .parsoid-body .ace_gutter,
+  .parsoid-body .ace_gutter-cell,
+  .mw-editform .ace_gutter,
+  .mw-editform .ace_gutter-cell,
+  h1 .ace_gutter,
+  h1 .ace_gutter-cell, h2 .ace_gutter,
+  h2 .ace_gutter-cell, h3 .ace_gutter,
+  h3 .ace_gutter-cell, h4 .ace_gutter,
+  h4 .ace_gutter-cell, h5 .ace_gutter,
+  h5 .ace_gutter-cell, h6 .ace_gutter,
+  h6 .ace_gutter-cell,
+  .wikiEditor-ui-toolbar .ace_gutter,
+  .wikiEditor-ui-toolbar .ace_gutter-cell,
+  .editor.ace-tm .ace_gutter,
+  .editor.ace-tm .ace_gutter-cell,
+  .editOptions .ace_gutter,
+  .editOptions .ace_gutter-cell,
+  .codeEditor-status .ace_gutter,
+  .codeEditor-status .ace_gutter-cell,
+  .mw-body-content .ace_gutter,
+  .mw-body-content .ace_gutter-cell,
+  .mw-content-ltr .ace_gutter,
+  .mw-content-ltr .ace_gutter-cell,
+  .main-top .ace_gutter,
+  .main-top .ace_gutter-cell,
+  .toc .ace_gutter,
+  .toc .ace_gutter-cell,
+  .mw-warning .ace_gutter,
+  .mw-warning .ace_gutter-cell,
+  .infobox .ace_gutter,
+  .infobox .ace_gutter-cell,
+  .toccolours .ace_gutter,
+  .toccolours .ace_gutter-cell,
+  div.thumbinner .ace_gutter,
+  div.thumbinner .ace_gutter-cell,
+  div.flaggedrevs_basic .ace_gutter,
+  div.flaggedrevs_basic .ace_gutter-cell,
+  .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button .ace_gutter,
+  .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button .ace_gutter-cell {
+    color: #cccccc; }
+
+.oo-ui-textInputWidget .oo-ui-inputWidget-input,
+input,
+.mw-ui-button.mw-ui-quiet,
+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,
+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,
+.mw-ui-button {
+  background-color: #333333;
+  color: #cccccc; }
+
+.mw-parser-output div.main-top,
+.mw-parser-output div.main-top-left,
+.mw-parser-output div.main-box {
+  background-color: #222222;
+  color: #cccccc; }
+
+.warningbox {
+  background-color: #3b3122;
+  border-color: #1b160f; }
+
+.portal .body li a,
+a.mw-charinsert-item,
+a {
+  color: #ccddff; }
+  .portal .body li a:visited,
+  a.mw-charinsert-item:visited,
+  a:visited {
+    color: #99bbff; }
+
+.mw-highlight,
+div.mw-highlight,
+pre,
+.mw-code {
+  background-color: #2a2a2a; }
+
+/* Выделение реплик, обозначенных «:», разными цветами */
+.ns-talk dl, .ns-4 dl {
+  border-top: solid 1px #F0F080;
+  border-left: solid 1px #F0F080;
+  padding: .5em 0 0 .5em;
+  margin: 0 0 0 1em; }
+
+.ns-talk dl, .ns-4 dl,
+.ns-talk dl dl dl, .ns-4 dl dl dl,
+.ns-talk dl dl dl dl dl, .ns-4 dl dl dl dl dl,
+.ns-talk dl dl dl dl dl dl dl, .ns-4 dl dl dl dl dl dl dl,
+.ns-talk dl dl dl dl dl dl dl dl dl,
+.ns-4 dl dl dl dl dl dl dl dl dl {
+  background: #F8FCF0; }
+
+.ns-talk dl dl, .ns-4 dl dl,
+.ns-talk dl dl dl dl, .ns-4 dl dl dl dl,
+.ns-talk dl dl dl dl dl dl, .ns-4 dl dl dl dl dl dl,
+.ns-talk dl dl dl dl dl dl dl dl,
+.ns-4 dl dl dl dl dl dl dl dl {
+  background: #F8FCF0; }
+
+/* Нумерованный список вклада и журналов */
+.mw-special-Contributions #content ul,
+.mw-special-Log #content ul {
+  list-style-type: decimal !important;
+  list-style-image: none !important; }
