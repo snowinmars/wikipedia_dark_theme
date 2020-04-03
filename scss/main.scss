@@ -1,112 +1,156 @@
 @use "sass:color";
- 
+
 $master_bg: #222222; // Главный цвет фона
 $slave_bg: #333333; // Дополнительный цвет фона
 $master_fg: #cccccc; // Главный цвет текста
 $link_fg: #ccddff; // Главный цвет ссылки
-$talk_odd_bg: #F0F080; // Цвет нечётной реплики в обсуждении, которая отделена двоето
-$talk_even_bg: #F8FCF0; // Цвет чётной реплики в обсуждении, которая отделена двоеточие
 $message_bg: #cccccc;
 $warning_bg: adjust-color($master_bg, $red: 25%, $green: 15%); // Главный цвет фона предупреждения
 $error_bg: #ddcccc;
 $success_bg: #ccddcc;
+$talk_odd_bg: adjust-color($master_bg, $red: 100%, $green: 75%, $blue: 25%); // Цвет нечётной реплики в обсуждении, которая отделена двоето
+$talk_even_bg: adjust-color($master_bg, $red: 25%, $green: 75%, $blue: 105%); // Цвет чётной реплики в обсуждении, которая отделена двоеточие
+
+.diff-deletedline .diffchange {
+  background-color: $talk_odd_bg;
+}
+
+.diff-addedline .diffchange {
+  background-color: $talk_even_bg;
+}
+
+ul {
+  list-style: circle;
+}
 
 .messagebox, .errorbox, .warningbox, .successbox,
 .wikiEditor-ui-toolbar,
 h1, h2, h3, h4, h5, h6,
 .mw-parser-output div.main-top-left,
 .mw-parser-output div.main-top,
-.mw-parser-output div.main-box
- {
+#pagehistory li.selected,
+.mw-parser-output div.main-box {
 	background-color: inherit;
-	color: inherit; 
+	color: inherit;
   background-image: none;
 }
 
-body,
-.mw-body,
-.parsoid-body,
-table.fmbox-system,
-.fmbox-system,
-.wikiEditor-ui-toolbar,
-.editor.ace-tm,
-.editor,
-.editOptions,
-.codeEditor-status,
-.mw-body-content,
-.mw-content-ltr,
-.mw-parser-output,
-.toc,
-.mw-warning,
-.infobox,
-.toccolours,
-div.thumbinner,
-div.flaggedrevs_basic,
-.main-top {   
-	background-color: $master_bg;
-  
-  .ace_gutter,
-  .ace_gutter-cell {
-    background-color: $master_bg;  
+// fighting with inline styles
+table {
+  thead {
+    tr, th {
+      background-color: $master_bg !important;
+      color: $master_fg  !important;
+    }
+  }
+  tbody {
+    tr, td {
+      background-color: $master_bg !important;
+      color: $master_fg  !important;
+    }
+  }
+  tfoot {
+   tr, td {
+      background-color: $master_bg !important;
+      color: $master_fg  !important;
+    }
   }
 }
 
-body,
-.mw-body,
-.parsoid-body,  
-.mw-editform,
-h1, h2, h3, h4, h5, h6, 
-.wikiEditor-ui-toolbar, 
-.editor.ace-tm,
-.editOptions,
+// fighting with inline styles
+div.barbox.tright {
+  background-color: $master_bg !important;
+  color: $master_fg  !important;
+}
+
+.catlinks,
 .codeEditor-status,
-.mw-body-content,   
-.mw-content-ltr,
-.main-top,
-.toc,
-.mw-warning,
+.diff-context,
+.editOptions,
+.editor.ace-tm,
+.flaggedrevs-color-0,
+.flaggedrevs-color-1,
+.flaggedrevs_reviewform,
+.fmbox-system,
+.fr-rating-option-0,
+.fr-rating-option-1,
 .infobox,
+.main-top,
+.mw-body,
+.mw-body-content,
+.mw-content-ltr,
+.mw-editform,
+.mw-parser-output,
+.mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+.mw-warning,
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled,
+.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined,
+.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+.oo-ui-tagItemWidget.oo-ui-widget-enabled:not(.oo-ui-tagItemWidget-fixed),
+.parsoid-body,
+.toc,
 .toccolours,
-div.thumbinner,
+.watchlist-msg,
+.wikiEditor-ui-toolbar,
+body,
 div.flaggedrevs_basic,
-.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
-  color: $master_fg;  
+div.thumbinner,
+table.ambox,
+table.ambox,
+table.fmbox-system,
+h1, h2, h3, h4, h5, h6 {
+  background-color: $master_bg;
+  color: $master_fg;
 
   .ace_gutter,
   .ace_gutter-cell {
+    background-color: $master_bg;
     color: $master_fg;
-  }  
+  }
 }
 
 .oo-ui-textInputWidget .oo-ui-inputWidget-input,
 input,
+code,
+textarea,
+.wikiEditor-ui-view,
+.wikiEditor-ui-view-wikitext,
 .mw-ui-button.mw-ui-quiet,
 .mw-ui-button.mw-ui-quiet.mw-ui-progressive,
 .mw-ui-button.mw-ui-quiet.mw-ui-destructive,
 .mw-ui-button {
   background-color: $slave_bg;
-  color: $master_fg;    
+  color: $master_fg;
+
+  &:hover {
+    background-color: lighten($slave_bg, 10%);
+  }
 }
 
 .mw-parser-output {
   div.main-top,
   div.main-top-left,
   div.main-box {
-    background-color: $master_bg; 
+    background-color: $master_bg;
     color: $master_fg;
   }
 }
- 
-.warningbox {     
+
+.warningbox {
   background-color: $warning_bg;
   border-color: darken($warning_bg, 10%);
 }
 
 .portal .body li a,
 a.mw-charinsert-item,
+a.external,
+.mw-parser-output a.external,
+.mw-parser-output a.extiw,
 a {
   color: $link_fg;
-   
+
   &:visited {
     color: darken($link_fg, 10%);
   }
@@ -144,6 +188,6 @@ pre,
 .mw-special-Contributions #content ul,
 .mw-special-Log #content ul
 {
- list-style-type: decimal !important; 
+ list-style-type: decimal !important;
  list-style-image:none !important;
 }
