@@ -52,11 +52,12 @@ def parse_row_object(cells):
         row_object[variable] = value
 
         if variable not in optional_properties:
-            if property in ['divisor', 'numwidth', 'factor']:
+            if variable in ['divisor', 'numwidth', 'factor']:
                 continue
+
             optional_properties.append(variable)
 
-        # print(f'set {variable} to {value}')
+            print(f'set {variable} to {value}')
 
     # ensure that all optional properties exists in all rows
     for property in optional_properties:
